@@ -7,6 +7,8 @@ const DEBOUNCE_DELAY = 300;
 const debounce = require('lodash.debounce');
 const input = document.getElementById('search-box');
 
+document.getElementById('search-box').placeholder = 'Type country name here..';
+
 function createCountryLi(country) {
   let countryLi = document.createElement('li');
   let countryImg = document.createElement('img');
@@ -26,9 +28,10 @@ function showCountry(country) {
   }
   countryItems[0].textContent = `Capital: ${country.capital}`;
   countryItems[1].textContent = `Population: ${country.population}`;
-  countryItems[2].textContent = `Languages: ${JSON.stringify(
-    country.languages
-  )}`;
+  countryItems[2].textContent = `Languages: ${
+    Object.values(country.languages)[0]
+  }`;
+  console.log(country.languages);
   for (let i = 0; i < 3; i++) {
     document.querySelector('.country-info').append(countryItems[i]);
   }
