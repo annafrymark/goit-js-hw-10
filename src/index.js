@@ -20,7 +20,7 @@ function createCountryLi(country) {
 
 function showCountry(country) {
   createCountryLi(country);
-  countryItems = [];
+  let countryItems = [];
   for (let i = 0; i < 3; i++) {
     countryItems.push(document.createElement('li'));
   }
