@@ -29,7 +29,7 @@ function showCountry(country) {
   countryItems[0].textContent = `Capital: ${country.capital}`;
   countryItems[1].textContent = `Population: ${country.population}`;
   countryItems[2].textContent = `Languages: ${
-    Object.values(country.languages)[0]
+    Object.values(country.languages)
   }`;
   console.log(country.languages);
   for (let i = 0; i < 3; i++) {
